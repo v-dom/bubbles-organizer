@@ -1,1 +1,1 @@
-import './scripts/bubbles-chart-hierachy';
+import './scripts/bubbles-chart-data';

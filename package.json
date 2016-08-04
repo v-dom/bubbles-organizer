@@ -17,6 +17,7 @@
     ]
   },
   "dependencies": {
+    "d3-scale": "1.0.3"
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
@@ -75,6 +76,9 @@
     "update": "updtr"
   },
   "keywords": [
-    "d3", "snabbdom", "virtual-dom", "studies"
+    "d3",
+    "snabbdom",
+    "virtual-dom",
+    "studies"
   ]
 }
