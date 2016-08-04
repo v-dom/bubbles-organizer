@@ -17,7 +17,7 @@ test('getScaleValues', t => {
     const domain = [1997, 2017],
         range = [0, 900];
 
-    const actual = getScaleLinearValues(domain, range, model.data.children),
+    const actual = getScaleLinearValues(domain, range, model.data.children, 'year'),
         expect = model.scaledValues;
     t.deepEqual(actual, expect);
     t.end();
