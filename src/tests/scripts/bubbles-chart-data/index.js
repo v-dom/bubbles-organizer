@@ -37,15 +37,16 @@ test('getHierarchy', t => {
 
 test('createPackLayout', t => {
     const aux = Object.assign({}, {
-            children: model.scaledValues
-        }),
+        children: model.scaledValues
+    });
 
-        radiuses = createPackLayout(100, 200, 1.5, getHierarchy(aux, 'value'))
+    const radiuses = createPackLayout(100, 200, 1.5, getHierarchy(aux, 'value'))
     .children
-    .map(item => item.r),
+    .map(item => item.r);
 
-        actual = radiuses,
+    const actual = radiuses,
         expect = model.packLayoutRadiuses;
+
     t.deepEqual(actual, expect);
     t.end();
 });
