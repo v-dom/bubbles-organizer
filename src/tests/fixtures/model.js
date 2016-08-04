@@ -30,25 +30,23 @@ export default {
         }]
     },
 
-    scaledValues: {
-        children: [{
-            value: 360
-        }, {
-            value: 720
-        }, {
-            value: 225
-        }, {
-            value: 90
-        }, {
-            value: 450
-        }, {
-            value: 855
-        }, {
-            value: 585
-        }, {
-            value: 45
-        }, {
-            value: 270
-        }]
-    }
+    scaledValues: [{
+        value: 360
+    }, {
+        value: 720
+    }, {
+        value: 225
+    }, {
+        value: 90
+    }, {
+        value: 450
+    }, {
+        value: 855
+    }, {
+        value: 585
+    }, {
+        value: 45
+    }, {
+        value: 270
+    }]
 };
