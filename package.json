@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "d3-hierarchy": "1.0.2",
-    "d3-scale": "1.0.3"
+    "d3-scale": "1.0.3",
+    "snabbdom": "0.5.1"
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
