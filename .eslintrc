@@ -5,23 +5,18 @@
     "node": true,
     "browser": true,
     "es6": true
-  },
-  "plugins": [
-    "react"
-  ],
+  }
   "rules": {
     "no-unused-vars": [
       2,
       {
-        "args": "none",
-        "argsIgnorePattern": "React"
+        "args": "none"
       }
     ],
     "no-mixed-spaces-and-tabs": [
       0,
       "smart-tabs"
     ],
-    "react/jsx-uses-vars": 2,
     "func-style": [
       0,
       "declaration"
