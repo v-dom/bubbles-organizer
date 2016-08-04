@@ -20,8 +20,5 @@ export const getScaleLinearValues = (domain, range, data, key) => {
 
 export const getHierarchy = (data, key) => (hierarchy(data).sum(d => d[key]));
 
-export const createPackLayout = (w = 0, h = 0, padding = 0, data) => {
-    return pack()
-    .size([h, w])
-    .padding(padding)(data);
-};
+export const createPackLayout = (w = 0, h = 0, padding = 0, data) =>
+  (pack().size([h, w]).padding(padding)(data));
