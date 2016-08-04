@@ -7,5 +7,9 @@ export const getScaleLinearValues = (domain, range, data, key) => {
     .domain(domain)
     .range(range);
 
-    return data.map(item => linear(item[key]));
+    return {
+        children: data.map(item => ({
+            value: linear(item[key])
+        }))
+    };
 };
