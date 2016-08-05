@@ -4,13 +4,9 @@ export default h => {
 
     const BubbleChartCont = createBubbleChartContainer(h);
 
-  //  update
-
-
     return props => {
-        return (h('div.container', [BubbleChartCont({})]));
+        return (h('div.container', [
+            BubbleChartCont(props)
+        ]));
     };
 };
-//  , [
-//     BubbleChartCont(props)
-// ]

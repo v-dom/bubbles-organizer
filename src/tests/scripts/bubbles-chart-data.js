@@ -46,7 +46,7 @@ test('createPackLayout', t => {
 
     const actual = radiuses,
         expect = model.packLayoutRadiuses;
-
+    // console.log(createPackLayout(100, 200, 1.5, getHierarchy(aux, 'value')).children );
     t.deepEqual(actual, expect);
     t.end();
 });

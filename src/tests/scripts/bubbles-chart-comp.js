@@ -11,7 +11,6 @@ const callback = sinon.spy();
 
 const props = {
     viewBox: '0, 0, 300, 500',
-    elmWasInserted: callback,
     nodes: [{
         title: 'A',
         r: 9.580866083659831,
@@ -27,15 +26,6 @@ before('desc: bubble chart component', t => {
 test('should render correctly', t => {
     const actual = BubbleChart({}).sel,
         expect = 'svg';
-    t.equal(actual, expect);
-    t.end();
-});
-
-test('elment was inserted', t => {
-    BubbleChart(props).data.hook.insert();
-    const actual = callback.calledOnce,
-        expect = true;
-
     t.equal(actual, expect);
     t.end();
 });

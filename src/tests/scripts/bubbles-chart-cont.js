@@ -19,8 +19,15 @@ const after = test;
 const bubbleChartCont = createBubbleChartCont(h);
 
 const props = {
-    data: model.data,
-    key: 'year'
+    nodes: [{
+        r: 12,
+        x: 20,
+        y: 40,
+        data: {
+            title: 'A'
+        }
+    }],
+    viewBox: '0,0,100,200'
 };
 
 before('desc: bubble chart container', t => {
