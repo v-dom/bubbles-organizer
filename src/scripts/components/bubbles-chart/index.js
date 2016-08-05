@@ -3,7 +3,7 @@ export default h =>
     viewBox,
     elmWasInserted,
     nodes = []
-  }) => (h('svg', {
+  }) => (h('svg.bubbles-chart', {
       hook: {
           insert: elmWasInserted
       },
