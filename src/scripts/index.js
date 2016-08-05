@@ -3,7 +3,8 @@ import h from 'snabbdom/h';
 
 import {
   getContainerBoundingClientRect,
-  getMinMaxValues
+  getMinMaxValues,
+  getBubblesGroupPosX
 } from 'scripts/helpers';
 
 import {
@@ -49,6 +50,12 @@ const data = {
     }, {
         label: 'J',
         year: 2003
+    }, {
+        label: 'k',
+        year: 2010
+    }, {
+        label: 'L',
+        year: 2013
     }]
 };
 
@@ -78,13 +85,26 @@ const bubblesData = () => {
 };
 
 const render = () => {
+
+    let newVnode;
+
     const containerDimensions = getContainerBoundingClientRect(),
-        newVnode = App({
-            viewBox: `0, 0, ${containerDimensions.w},  ${containerDimensions.h}`,
-            nodes: bubblesData(data).children
-        });
+        nodesData = bubblesData(data).children;
+
+    newVnode = App({
+        viewBox: `0, 0, ${containerDimensions.w},  ${containerDimensions.h}`,
+        nodes: nodesData
+    });
 
     oldVnode = patch(oldVnode, newVnode);
+
+    newVnode = App({
+        viewBox: `0, 0, ${containerDimensions.w},  ${containerDimensions.h}`,
+        nodes: nodesData,
+        nodesContXPos: getBubblesGroupPosX()
+    });
+
+    patch(oldVnode, newVnode);
 };
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -1,13 +1,11 @@
 import test from 'tape';
 import h from 'snabbdom/h';
-import sinon from 'sinon';
 import createBubbleChart from 'scripts/bubbles-chart-comp';
 
 const before = test;
 const after = test;
 
 const BubbleChart = createBubbleChart(h);
-const callback = sinon.spy();
 
 const props = {
     viewBox: '0, 0, 300, 500',
@@ -25,13 +23,22 @@ before('desc: bubble chart component', t => {
 
 test('should render correctly', t => {
     const actual = BubbleChart({}).sel,
-        expect = 'svg';
+        expect = 'svg#bubbles-chart';
     t.equal(actual, expect);
     t.end();
 });
 
-test('should have one children', t => {
+test('should have one <g> container for nodes', t => {
     const actual = BubbleChart(props).children.length,
+        expect = 1;
+
+    t.equal(actual, expect);
+    t.end();
+});
+
+
+test('<g> container should have one children', t => {
+    const actual = BubbleChart(props).children[0].children.length,
         expect = 1;
 
     t.equal(actual, expect);

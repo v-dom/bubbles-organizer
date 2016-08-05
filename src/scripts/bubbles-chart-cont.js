@@ -1,18 +1,10 @@
 import createBubbleChart from 'scripts/bubbles-chart-comp';
-import {
-  getContainerBoundingClientRect,
-  getMinMaxValues
-} from 'scripts/helpers';
-import {
-  getScaleLinearValues,
-  createPackLayout,
-  getHierarchy
-} from 'scripts/bubbles-chart-data';
 
 export default h =>
   ({
     viewBox = '0,0,0,0',
-    nodes = []
+    nodes = [],
+    nodesContXPos
   }) => {
       const BubbleChart = createBubbleChart(h);
       const props = {
@@ -23,7 +15,8 @@ export default h =>
             x: item.x,
             y: item.y,
             title: item.data.title
-        }))
+        })),
+          nodesContXPos
       };
 
       return BubbleChart(props);

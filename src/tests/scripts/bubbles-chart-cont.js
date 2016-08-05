@@ -1,7 +1,6 @@
 import test from 'tape';
 import h from 'snabbdom/h';
 import mock from 'mock';
-import model from 'tests/fixtures/model';
 
 const createBubbleChartCont = mock('scripts/bubbles-chart-cont', {
     'scripts/bubbles-chart-comp': () => () => (h('div')),

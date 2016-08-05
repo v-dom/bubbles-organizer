@@ -3,7 +3,8 @@ import benv from 'benv';
 import model from 'tests/fixtures/model';
 import {
   getMinMaxValues,
-  getContainerBoundingClientRect
+  getContainerBoundingClientRect,
+  getBubblesGroupPosX
 } from 'scripts/helpers';
 
 const before = test;
@@ -13,8 +14,11 @@ before('desc: helpers', t => {
     benv.setup(() => {
         window.document
       .querySelector('body')
-      .innerHTML = '<div class="container"></div>';
-
+      .innerHTML = `<div class="container">
+                      <svg id="bubbles-chart">
+                        <g id="bubbles-group-container"></g>
+                      </svg>
+                    </div>`;
         t.end();
     });
 });
@@ -34,6 +38,13 @@ test('getContainerBoundingClientRect', t => {
             h: 0
         };
     t.deepEqual(actual, expect);
+    t.end();
+});
+
+test('getBubblesGroupPosX', t => {
+    const actual = getBubblesGroupPosX(),
+        expect = 0;
+    t.equal(actual, expect);
     t.end();
 });
 
