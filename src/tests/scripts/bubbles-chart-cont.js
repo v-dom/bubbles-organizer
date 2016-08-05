@@ -19,18 +19,6 @@ const props = {
     data: model.data,
     key: 'year'
 };
-// const callback = sinon.spy();
-//
-// const props = {
-//     viewBox: '0, 0, 300, 500',
-//     elmWasInserted: callback,
-//     nodes: [{
-//         title: 'A',
-//         r: 9.580866083659831,
-//         x: 75.11046409135821,
-//         y: 64.63213029570262
-//     }]
-// };
 
 before('desc: bubble chart container', t => {
     t.end();

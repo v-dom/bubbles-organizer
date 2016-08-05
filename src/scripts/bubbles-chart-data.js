@@ -8,13 +8,14 @@ import {
 } from 'd3-hierarchy';
 
 // @returns object with the values
-export const getScaleLinearValues = (domain, range, data, key) => {
+export const getScaleLinearValues = (domain, range, data, valueKey, titleKey) => {
     const linear = scaleLinear()
     .domain(domain)
     .range(range);
 
     return data.map(item => ({
-        value: linear(item[key])
+        value: linear(item[valueKey]),
+        title: item[titleKey]
     }));
 };
 
