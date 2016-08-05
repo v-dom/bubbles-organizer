@@ -14,7 +14,7 @@ before('desc: data for bubble chart', t => {
     t.end();
 });
 
-test('getScaleValues', t => {
+test('getScaleLinearValues', t => {
     const domain = [1997, 2017],
         range = [0, 900],
 
