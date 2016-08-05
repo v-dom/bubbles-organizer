@@ -25,8 +25,8 @@ before('desc: bubble chart component', t => {
 });
 
 test('should render correctly', t => {
-    const actual = BubbleChart(props).sel,
-        expect = 'svg.bubbles-chart';
+    const actual = BubbleChart({}).sel,
+        expect = 'svg';
     t.equal(actual, expect);
     t.end();
 });

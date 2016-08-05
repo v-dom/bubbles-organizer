@@ -1,8 +1,7 @@
 import createBubbleChart from 'scripts/bubbles-chart-comp';
 import {
   getContainerBoundingClientRect,
-  getMinMaxValues,
-  getViewBox
+  getMinMaxValues
 } from 'scripts/helpers';
 import {
   getScaleLinearValues,
@@ -12,14 +11,19 @@ import {
 
 export default h =>
   ({
-    data,
-    key,
-    oldVnode,
-    patch
+    data = {
+        children: []
+    },
+    key = '',
+    update = () => {}
   }) => {
       const BubbleChart = createBubbleChart(h);
 
       const insertElmListener = () => {
+
+          if (data.children.length === 0) {
+              throw new Error('no data');
+          }
 
           const values = data.children.map(item => item[key]),
 
@@ -37,19 +41,19 @@ export default h =>
               hierarchy = getHierarchy({
                   children: getScaleLinearValues(domain, range, data.children, key)
               }, 'value'),
+
               padding = 1.5,
-              packLayout = createPackLayout(dimensions, dimensions, padding, hierarchy),
+              packLayout = createPackLayout(dimensions, dimensions, padding, hierarchy);
 
-              newVnode = BubbleChart({
-                  viewBox: getViewBox(),
-                  nodes: packLayout
-              });
-
-          patch(oldVnode, newVnode);
+          update(BubbleChart({
+              viewBox: `0, 0, ${containerDimensions.w},  ${containerDimensions.h}`,
+              nodes: packLayout
+          }));
       };
 
       return BubbleChart({
-          viewBox: getViewBox(),
-          elmWasInserted: insertElmListener
+          viewBox: '0, 0, 0, 0',
+          elmWasInserted: insertElmListener,
+          data: data
       });
   };

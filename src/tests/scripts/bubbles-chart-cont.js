@@ -6,7 +6,10 @@ import model from 'tests/fixtures/model';
 const createBubbleChartCont = mock('scripts/bubbles-chart-cont', {
     'scripts/bubbles-chart-comp': () => () => (h('div')),
     'scripts/helpers': {
-        getViewBox: () => ''
+        getContainerBoundingClientRect: () => ({
+            w: 100,
+            h: 100
+        })
     }
 }, require).default;
 
