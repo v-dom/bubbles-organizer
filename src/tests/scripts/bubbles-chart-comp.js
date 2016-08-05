@@ -1,7 +1,7 @@
 import test from 'tape';
 import h from 'snabbdom/h';
 import sinon from 'sinon';
-import createBubbleChart from 'scripts/components/bubbles-chart';
+import createBubbleChart from 'scripts/bubbles-chart-comp';
 
 const before = test;
 const after = test;
