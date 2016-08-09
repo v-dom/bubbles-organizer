@@ -9,15 +9,21 @@ import {
   pack
 } from 'd3-hierarchy';
 
+import {
+  color
+} from 'd3-color';
+
 
 export const getScaleLinearValues = (domain, range, data, valueKey, titleKey) => {
     const linear = scaleLinear()
     .domain(domain)
     .range(range);
 
-    const color = scaleOrdinal(schemeCategory20b);
+    const scolor = scaleOrdinal(schemeCategory20b);
+
     return data.map(item => ({
-        fill: color(linear(item[valueKey])),
+        inner: color(scolor(linear(item[valueKey]))).brighter().toString(),
+        fill: scolor(linear(item[valueKey])),
         value: linear(item[valueKey]),
         title: item[titleKey]
     }));

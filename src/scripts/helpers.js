@@ -11,14 +11,3 @@ export const getContainerBoundingClientRect = () => {
         h: clientRec.height
     };
 };
-
-export const getBubblesGroupPosX = () => {
-
-    const svg = window.document.querySelector('#bubbles-chart')
-    .getBoundingClientRect(),
-
-        gContainer = window.document.querySelector('#bubbles-group-container')
-    .getBoundingClientRect();
-
-    return ((svg.width - gContainer.width) / 2) - gContainer.left;
-};

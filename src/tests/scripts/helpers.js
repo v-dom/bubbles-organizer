@@ -3,8 +3,7 @@ import benv from 'benv';
 import model from 'tests/fixtures/model';
 import {
   getMinMaxValues,
-  getContainerBoundingClientRect,
-  getBubblesGroupPosX
+  getContainerBoundingClientRect
 } from 'scripts/helpers';
 
 const before = test;
@@ -38,13 +37,6 @@ test('getContainerBoundingClientRect', t => {
             h: 0
         };
     t.deepEqual(actual, expect);
-    t.end();
-});
-
-test('getBubblesGroupPosX', t => {
-    const actual = getBubblesGroupPosX(),
-        expect = 0;
-    t.equal(actual, expect);
     t.end();
 });
 

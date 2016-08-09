@@ -1,17 +1,12 @@
 export default h =>
   ({
     viewBox = '0,0,0,0',
-    nodes = [],
-    nodesContXPos = 0
+    nodes = []
   }) => (h('svg#bubbles-chart', {
       attrs: {
           viewBox
       }
-  }, [h('g#bubbles-group-container', {
-      attrs: {
-          transform: `translate(${nodesContXPos}, 0)`
-      }
-  },
+  }, [h('g#bubbles-group-container',
     nodes.map((node, idx) => (h('g', {
         key: `node_${idx}`,
         attrs: {
@@ -30,10 +25,10 @@ export default h =>
             attrs: {
                 cx: 0,
                 cy: 0,
-                r: node.r / 2,
-                fill: 'none',
-                'stroke-width': 5,
-                stroke: 'Black'
+                r: node.r / 2.5,
+                fill: node.innerCircle,
+                'stroke-width': 2.5,
+                stroke: 'White'
             }
         }),
         h('text', {
