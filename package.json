@@ -1,7 +1,7 @@
 {
   "name": "bubbles-chart-organizer",
   "version": "0.0.0",
-  "description": "studies bubbles chart",
+  "description": "studies bubbles chart d3js + snabbdom",
   "author": "SUXXUS",
   "license": "ISC",
   "repository": {
