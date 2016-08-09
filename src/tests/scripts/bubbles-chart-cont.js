@@ -23,7 +23,8 @@ const props = {
         x: 20,
         y: 40,
         data: {
-            title: 'A'
+            title: 'A',
+            fill: '#333'
         }
     }],
     viewBox: '0,0,100,200'

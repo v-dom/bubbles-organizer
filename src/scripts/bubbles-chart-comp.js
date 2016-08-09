@@ -23,9 +23,24 @@ export default h =>
                 cx: 0,
                 cy: 0,
                 r: node.r,
-                fill: 'antiquewhite'
+                fill: node.fill
             }
         }),
-        h('text', node.title)
+        h('circle', {
+            attrs: {
+                cx: 0,
+                cy: 0,
+                r: node.r / 2,
+                fill: 'none',
+                'stroke-width': 5,
+                stroke: 'Black'
+            }
+        }),
+        h('text', {
+            attrs: {
+                dx: '-0.25em',
+                dy: '0.2em'
+            }
+        }, node.title)
     ])))
   )]));

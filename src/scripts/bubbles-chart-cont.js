@@ -14,7 +14,8 @@ export default h =>
             r: item.r,
             x: item.x,
             y: item.y,
-            title: item.data.title
+            title: item.data.title,
+            fill: item.data.fill
         })),
           nodesContXPos
       };

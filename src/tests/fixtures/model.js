@@ -31,30 +31,39 @@ export default {
     },
 
     scaledValues: [{
+        fill: '#3182bd',
         title: 'B',
         value: 360
     }, {
+        fill: '#6baed6',
         title: 'E',
         value: 720
     }, {
+        fill: '#9ecae1',
         title: 'A',
         value: 225
     }, {
+        fill: '#c6dbef',
         title: 'D',
         value: 90
     }, {
+        fill: '#e6550d',
         title: 'F',
         value: 450
     }, {
+        fill: '#fd8d3c',
         title: 'C',
         value: 855
     }, {
+        fill: '#fdae6b',
         title: 'G',
         value: 585
     }, {
+        fill: '#fdd0a2',
         title: 'I',
         value: 45
     }, {
+        fill: '#31a354',
         title: 'J',
         value: 270
     }],

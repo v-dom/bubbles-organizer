@@ -77,7 +77,7 @@ const bubblesData = () => {
             children: getScaleLinearValues(domain, range, data.children, 'year', 'label')
         }, 'value'),
 
-        padding = 1.5,
+        padding = 1,
 
         packLayout = createPackLayout(dimensions, dimensions, padding, hierarchy);
 
