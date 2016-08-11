@@ -1,10 +1,10 @@
 # bubbles chart (studies)
 
 ## desc
-Integration D3js whith snabbdom
+Integration D3js with Snabbdom
 
 * D3js modules ('d3-scale', 'd3-hierarchy', 'd3-color')
-* snabbdom (A virtual DOM library )
+* Snabbdom (A virtual DOM library )
 * adaptative design
 
 ## Clone the repo & install:
